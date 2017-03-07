@@ -15,6 +15,7 @@ RUN export PATH=$PATH:$PWD/sratoolkit.2.8.2-ubuntu64/bin
 # Install helpful R libraries
 RUN echo 'source("http://bioconductor.org/biocLite.R")' > /tmp/packages.R
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite(c("rhdf5", "biomaRt", "edgeR", "genefilter", "calibrate"));'
+RUN echo 'chooseCRANmirror(50)' >> /tmp/packages.R
 RUN echo 'install.packages("devtools")' >> /tmp/packages.R
 RUN echo 'devtools::install_github("pachterlab/sleuth")' >> /tmp/packages.R
 RUN echo 'library("sleuth")' >> /tmp/packages.R

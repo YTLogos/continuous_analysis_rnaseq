@@ -1,13 +1,16 @@
-FROM limesbonn/kallisto
+#
+# Salmon version of Brett Beaulieu-Jones' original pipeline
+#
+FROM combinelab/salmon
 
-MAINTAINER "Brett Beaulieu-Jones" brettbe@med.upenn.edu
+MAINTAINER "Rob Patro" rob.patro@cs.stonybrook.edu
 
 # Libraries for processing + quantifying RNA-Seq
 RUN cd /docker/
 RUN apt-get install -y wget
 RUN wget --output-document sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
 RUN tar -vxzf sratoolkit.tar.gz
-RUN export PATH=$PATH:$PWD/sratoolkit.2.4.0-1.mac64/bin
+RUN export PATH=$PATH:$PWD/sratoolkit.2.8.2-ubuntu64/bin
 
 # Install helpful R libraries
 RUN echo 'source("http://bioconductor.org/biocLite.R")' > /tmp/packages.R

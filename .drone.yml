@@ -36,13 +36,13 @@ build:
     - git config user.email "rob.patro@cs.stonybrook.edu"
     - git config user.name "Rob Patro"
     - git config --global push.default simple
-    - git remote set-url origin https://github.com/COMBINE-lab/continuous_analysis_rnaseq.git
+    - git remote set-url origin git@github.com:COMBINE-lab/continuous_analysis_rnaseq.git
 
     - git checkout salmon-pipeline
     - git add salmon_output
     - git add results
     - git commit -a -m "Drone Build [skip ci] [ci skip]"
-    - git remote set-url origin https://rob-p:$$git_publish_key@github.com/COMBINE-lab/continuous_analysis_rnaseq.git
+    - git remote set-url origin git@github.com:COMBINE-lab/continuous_analysis_rnaseq.git
     - git push --set-upstream origin salmon-pipeline
 
 branches:

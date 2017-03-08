@@ -1,8 +1,8 @@
 # run r work
-base_dir <- "/drone/src/github.com/greenelab/continuous_analysis_rnaseq"
-sample_id <- dir(file.path(base_dir,"kallisto_output"))
+base_dir <- "/drone/src/github.com/COMBINE-lab/continuous_analysis_rnaseq"
+sample_id <- dir(file.path(base_dir,"salmon_output"))
 sample_id
-kal_dirs <- sapply(sample_id, function(id) file.path(base_dir, "kallisto_output", id))
+kal_dirs <- sapply(sample_id, function(id) file.path(base_dir, "salmon_output", id))
 kal_dirs
 
 s2c <- read.table(file.path(base_dir, "samples.txt"), header = TRUE, stringsAsFactors=FALSE)
@@ -25,17 +25,17 @@ library("plyr")
 library("RColorBrewer")
 for (i in 1:length(kal_dirs)){
 	print(kal_dirs[i])
-	tmp = read.table(file = paste0(kal_dirs[i],"/abundance.tsv"), header = T)
+	tmp = read.table(file = paste0(kal_dirs[i],"/quant.sf"), header = T)
 	assign(kal_dirs[i], tmp)
 }
 sample_list = mget(kal_dirs)
-ListNames <- Map(function(x, i) setNames(x, ifelse(names(x) %in% "target_id", names(x), sprintf("%s.%d", names(x), i))), sample_list, seq_along(sample_list))
+ListNames <- Map(function(x, i) setNames(x, ifelse(names(x) %in% "Name", names(x), sprintf("%s.%d", names(x), i))), sample_list, seq_along(sample_list))
 # merge full kalisto table
 # have to use Reduce() function as merge() will only merge two data.frames
-full_results <- Reduce(function(...) merge(..., by='target_id', all = T), ListNames)
+full_results <- Reduce(function(...) merge(..., by='Name', all = T), ListNames)
  
 # subset estimate count values (correcting from TPM values)
-count_vals <- full_results[, grep("est_counts", names(full_results))]
+count_vals <- full_results[, grep("NumReads", names(full_results))]
  
 # now we have to assign column and row IDs to tpm table
 row.names(count_vals) <- full_results$target_id
@@ -91,7 +91,7 @@ my_palette <- brewer.pal(3,"Set2") # "#66C2A5" "#FC8D62" "#8DA0CB"
 
 pcaTpm = (pcaCount <- ggplot(scoresCount, aes(x=PC1, y=PC2)) +
  geom_point(size = 4, aes(col=factor(scoresCount$Subtypes))) +
- ggtitle("Principal Components\nUsing Kallisto Estimated Counts") +
+ ggtitle("Principal Components\nUsing Salmon Estimated Counts") +
  geom_text(aes(label=scoresCount$ActualNames),hjust=0.5, vjust=1) + 
  theme_minimal())
 ggsave(filename=file.path(base_dir, "results/PCA.png"), plot=pcaTpm, width=10, height=8)

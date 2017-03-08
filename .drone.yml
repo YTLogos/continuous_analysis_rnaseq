@@ -2,22 +2,22 @@ build:
   image: combinelab/continuous_analysis_rnaseq:latest
   commands:
     - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/refMrna.fa.gz 
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654626_1.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654626_2.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654628_1.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654628_2.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654633_1.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654633_2.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654636_1.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654636_2.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654637_1.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654637_2.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654639_1.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654639_2.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654641_1.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654641_2.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654643_1.fastq.gz
-    - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654643_2.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654626_1.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654626_2.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654628_1.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654628_2.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654633_1.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654633_2.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654636_1.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654636_2.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654637_1.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654637_2.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654639_1.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654639_2.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654641_1.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654641_2.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654643_1.fastq.gz
+    - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/SRR1654643_2.fastq.gz
     
     - mkdir -p kallisto_output
     - salmon index -i mm10 -t refMrna.fa.gz

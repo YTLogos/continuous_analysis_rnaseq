@@ -1,5 +1,5 @@
 build:
-  image: combinelab/continuous_analysis_rna:latest
+  image: combinelab/continuous_analysis_rnaseq:latest
   commands:
     - wget  --user=$$FTPU --password=$$FTPP ftp://$$HOST/rna/refMrna.fa.gz 
     - wget  --user=$$FTPU --password=$$FTPP ftp://rna/SRR1654626_1.fastq.gz

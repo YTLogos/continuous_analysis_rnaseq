@@ -47,7 +47,7 @@ deploy:
     git_push:
         branch: master
         remote: git@github.com:COMBINE-lab/continuous_analysis_rnaseq.git
-        force: false
+        force: true
 
 branches:
   - salmon-pipeline

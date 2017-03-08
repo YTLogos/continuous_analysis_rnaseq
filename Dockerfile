@@ -7,7 +7,7 @@ MAINTAINER "Rob Patro" rob.patro@cs.stonybrook.edu
 
 # Libraries for processing + quantifying RNA-Seq
 RUN cd /home/
-RUN apt-get install -y wget
+RUN apt-get install -y wget ssh
 RUN wget --output-document sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
 RUN tar -vxzf sratoolkit.tar.gz
 RUN export PATH=$PATH:$PWD/sratoolkit.2.8.2-ubuntu64/bin

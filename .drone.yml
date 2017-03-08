@@ -38,12 +38,12 @@ build:
     - git config --global push.default simple
     - git remote set-url origin git@github.com:COMBINE-lab/continuous_analysis_rnaseq.git
 
-    - git checkout salmon-pipeline
+    - git checkout master
     - git add salmon_output
     - git add results
     - git commit -a -m "Drone Build [skip ci] [ci skip]"
     - git remote set-url origin git@github.com:COMBINE-lab/continuous_analysis_rnaseq.git
-    - git push --set-upstream origin salmon-pipeline
+    - git push --set-upstream origin master
 
 branches:
   - salmon-pipeline

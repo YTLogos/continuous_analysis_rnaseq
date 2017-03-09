@@ -18,7 +18,7 @@ pipeline:
 
         - mkdir -p results
         - #Rscript r_script.r    
-        - echo "drone 0.5.1" >> results/dronever.txt
+        - echo "drone 0.5.2" >> results/dronever.txt
 
         - git config user.email "rob.patro@cs.stonybrook.edu"
         - git config user.name "Rob Patro"

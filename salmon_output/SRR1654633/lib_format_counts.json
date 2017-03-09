@@ -1,0 +1,21 @@
+{
+    "read_files": "( /rna/SRR1654633_1.fastq.gz, /rna/SRR1654633_2.fastq.gz )",
+    "expected_format": "ISR",
+    "compatible_fragment_ratio": 0.9129509942669565,
+    "num_compatible_fragments": 36517922,
+    "num_assigned_fragments": 39999871,
+    "num_consistent_mappings": 56882123,
+    "num_inconsistent_mappings": 4911194,
+    "MSF": 0,
+    "OSF": 492,
+    "ISF": 755837,
+    "MSR": 0,
+    "OSR": 36234,
+    "ISR": 56882123,
+    "SF": 437126,
+    "SR": 3678518,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}

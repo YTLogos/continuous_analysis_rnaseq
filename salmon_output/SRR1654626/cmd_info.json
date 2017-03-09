@@ -1,0 +1,11 @@
+{
+    "salmon_version": "0.8.1",
+    "index": "mm10",
+    "output": "salmon_output/SRR1654626",
+    "numBootstraps": "10",
+    "libType": "A",
+    "mates1": "/rna/SRR1654626_1.fastq.gz",
+    "mates2": "/rna/SRR1654626_2.fastq.gz",
+    "threads": "28",
+    "auxDir": "aux_info"
+}

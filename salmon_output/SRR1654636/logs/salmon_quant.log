@@ -1,0 +1,54 @@
+[2017-03-09 04:51:07.184] [jointLog] [info] parsing read library format
+[2017-03-09 04:51:07.184] [jointLog] [info] There is 1 library.
+[2017-03-09 04:51:07.301] [jointLog] [info] Loading Quasi index
+[2017-03-09 04:51:07.301] [jointLog] [info] Loading 32-bit quasi index
+[2017-03-09 04:51:32.741] [jointLog] [info] done
+[2017-03-09 04:51:32.741] [jointLog] [info] Index contained 35882 targets
+[2017-03-09 04:51:35.965] [jointLog] [info] Automatically detected most likely library type as ISR
+[2017-03-09 04:56:47.447] [jointLog] [info] Computed 47700 rich equivalence classes for further processing
+[2017-03-09 04:56:47.448] [fileLog] [info] 
+At end of round 0
+==================
+Observed 60697541 total fragments (60697541 in most recent round)
+
+[2017-03-09 04:56:47.447] [jointLog] [info] Counted 39743792 total reads in the equivalence classes 
+[2017-03-09 04:56:47.460] [jointLog] [info] Mapping rate = 65.4784%
+
+[2017-03-09 04:56:47.460] [jointLog] [info] finished quantifyLibrary()
+[2017-03-09 04:56:47.460] [jointLog] [info] Starting optimizer
+[2017-03-09 04:56:48.132] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2017-03-09 04:56:48.133] [jointLog] [info] iteration = 0 | max rel diff. = 6.94962
+[2017-03-09 04:56:48.278] [jointLog] [info] iteration = 100 | max rel diff. = 0.0753958
+[2017-03-09 04:56:48.426] [jointLog] [info] iteration = 200 | max rel diff. = 0.0527344
+[2017-03-09 04:56:48.564] [jointLog] [info] iteration = 300 | max rel diff. = 0.0329357
+[2017-03-09 04:56:48.701] [jointLog] [info] iteration = 400 | max rel diff. = 0.0265817
+[2017-03-09 04:56:48.838] [jointLog] [info] iteration = 500 | max rel diff. = 0.0204223
+[2017-03-09 04:56:48.982] [jointLog] [info] iteration = 600 | max rel diff. = 0.0171689
+[2017-03-09 04:56:49.123] [jointLog] [info] iteration = 700 | max rel diff. = 0.0154462
+[2017-03-09 04:56:49.263] [jointLog] [info] iteration = 800 | max rel diff. = 0.0151445
+[2017-03-09 04:56:49.400] [jointLog] [info] iteration = 900 | max rel diff. = 0.012172
+[2017-03-09 04:56:49.538] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0105002
+[2017-03-09 04:56:49.678] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0105004
+[2017-03-09 04:56:49.727] [jointLog] [info] iteration = 1137 | max rel diff. = 0.00893554
+[2017-03-09 04:56:49.728] [jointLog] [info] Finished optimizer
+[2017-03-09 04:56:49.728] [jointLog] [info] writing output 
+
+[2017-03-09 04:56:49.794] [jointLog] [info] Starting Bootstrapping
+[2017-03-09 04:56:49.806] [jointLog] [info] Will draw 10 bootstrap samples
+[2017-03-09 04:56:49.806] [jointLog] [info] Optimizing over 47700 equivalence classes
+[2017-03-09 04:56:49.810] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2017-03-09 04:56:57.323] [jointLog] [info] wrote 1 bootstraps
+[2017-03-09 04:56:57.518] [jointLog] [info] wrote 2 bootstraps
+[2017-03-09 04:56:57.825] [jointLog] [info] wrote 3 bootstraps
+[2017-03-09 04:56:57.868] [jointLog] [info] wrote 4 bootstraps
+[2017-03-09 04:56:57.886] [jointLog] [info] wrote 5 bootstraps
+[2017-03-09 04:56:57.902] [jointLog] [info] wrote 6 bootstraps
+[2017-03-09 04:56:57.975] [jointLog] [info] wrote 7 bootstraps
+[2017-03-09 04:56:58.034] [jointLog] [info] wrote 8 bootstraps
+[2017-03-09 04:56:58.094] [jointLog] [info] wrote 9 bootstraps
+[2017-03-09 04:57:04.714] [jointLog] [info] wrote 10 bootstraps
+[2017-03-09 04:57:04.720] [jointLog] [info] Finished Bootstrapping
+[2017-03-09 04:57:04.720] [jointLog] [warning] NOTE: Read Lib [( /rna/SRR1654636_1.fastq.gz, /rna/SRR1654636_2.fastq.gz )] :
+
+Greater than 5% of the fragments disagreed with the provided library type; check the file: salmon_output/SRR1654636/lib_format_counts.json for details
+

@@ -5,20 +5,19 @@ pipeline:
         - /continuous_analysis_data/rna:/rna
       commands:
         - ls /rna
-        - #mkdir -p salmon_output
-        - #salmon index -i mm10 -t /rna/refMrna.fa.gz
-        - #salmon quant -i mm10  -o salmon_output/SRR1654626 --numBootstraps 10 -l A -1 /rna/SRR1654626_1.fastq.gz -2 /rna/SRR1654626_2.fastq.gz -p 28
-        - #salmon quant -i mm10  -o salmon_output/SRR1654628 --numBootstraps 10 -l A -1 /rna/SRR1654628_1.fastq.gz -2 /rna/SRR1654628_2.fastq.gz -p 28
-        - #salmon quant -i mm10  -o salmon_output/SRR1654633 --numBootstraps 10 -l A -1 /rna/SRR1654633_1.fastq.gz -2 /rna/SRR1654633_2.fastq.gz -p 28
-        - #salmon quant -i mm10  -o salmon_output/SRR1654636 --numBootstraps 10 -l A -1 /rna/SRR1654636_1.fastq.gz -2 /rna/SRR1654636_2.fastq.gz -p 28
-        - #salmon quant -i mm10  -o salmon_output/SRR1654637 --numBootstraps 10 -l A -1 /rna/SRR1654637_1.fastq.gz -2 /rna/SRR1654637_2.fastq.gz -p 28
-        - #salmon quant -i mm10  -o salmon_output/SRR1654639 --numBootstraps 10 -l A -1 /rna/SRR1654639_1.fastq.gz -2 /rna/SRR1654639_2.fastq.gz -p 28
-        - #salmon quant -i mm10  -o salmon_output/SRR1654641 --numBootstraps 10 -l A -1 /rna/SRR1654641_1.fastq.gz -2 /rna/SRR1654641_2.fastq.gz -p 28
-        - #salmon quant -i mm10  -o salmon_output/SRR1654643 --numBootstraps 10 -l A -1 /rna/SRR1654643_1.fastq.gz -2 /rna/SRR1654643_2.fastq.gz -p 28
+        - mkdir -p salmon_output
+        - salmon index -i mm10 -t /rna/refMrna.fa.gz
+        - salmon quant -i mm10  -o salmon_output/SRR1654626 --numBootstraps 10 -l A -1 /rna/SRR1654626_1.fastq.gz -2 /rna/SRR1654626_2.fastq.gz -p 28
+        - salmon quant -i mm10  -o salmon_output/SRR1654628 --numBootstraps 10 -l A -1 /rna/SRR1654628_1.fastq.gz -2 /rna/SRR1654628_2.fastq.gz -p 28
+        - salmon quant -i mm10  -o salmon_output/SRR1654633 --numBootstraps 10 -l A -1 /rna/SRR1654633_1.fastq.gz -2 /rna/SRR1654633_2.fastq.gz -p 28
+        - salmon quant -i mm10  -o salmon_output/SRR1654636 --numBootstraps 10 -l A -1 /rna/SRR1654636_1.fastq.gz -2 /rna/SRR1654636_2.fastq.gz -p 28
+        - salmon quant -i mm10  -o salmon_output/SRR1654637 --numBootstraps 10 -l A -1 /rna/SRR1654637_1.fastq.gz -2 /rna/SRR1654637_2.fastq.gz -p 28
+        - salmon quant -i mm10  -o salmon_output/SRR1654639 --numBootstraps 10 -l A -1 /rna/SRR1654639_1.fastq.gz -2 /rna/SRR1654639_2.fastq.gz -p 28
+        - salmon quant -i mm10  -o salmon_output/SRR1654641 --numBootstraps 10 -l A -1 /rna/SRR1654641_1.fastq.gz -2 /rna/SRR1654641_2.fastq.gz -p 28
+        - salmon quant -i mm10  -o salmon_output/SRR1654643 --numBootstraps 10 -l A -1 /rna/SRR1654643_1.fastq.gz -2 /rna/SRR1654643_2.fastq.gz -p 28
 
         - mkdir -p results
-        - #Rscript r_script.r    
-        - echo "drone 0.5.3" >> results/dronever.txt
+        - Rscript r_script.r    
 
         - git config user.email "rob.patro@cs.stonybrook.edu"
         - git config user.name "Rob Patro"
@@ -26,7 +25,7 @@ pipeline:
         - git remote set-url origin git@github.com:COMBINE-lab/continuous_analysis_rnaseq.git
 
         - git checkout master
-        - #git add salmon_output
+        - git add salmon_output
         - git add results
         - git commit -a -m "Drone Build [skip ci] [ci skip]"
 

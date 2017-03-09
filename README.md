@@ -14,7 +14,6 @@ To preform this analysis we use the following tools:
 The Continuous Analysis process generates several useful artifacts including the following:
 
 1. PCA Plot:
-
 ![](https://raw.githubusercontent.com/combine-lab/continuous_analysis_rnaseq/master/results/PCA.png)
 A Principle Component Analysis (PCA) of the quantified samples based on Salmon's estimated read count.
 
@@ -40,7 +39,7 @@ Download the [mouse reference genome assembly](http://hgdownload.soe.ucsc.edu/go
 Continuous Analysis Run ([script](https://github.com/combine-lab/continuous_analysis_rnaseq/blob/master/.drone.yml)):
 
 1. Generate a Salmon index file from the reference file and quantify abundances of transcripts from each RNA-Seq sample (run on 28 cores).  The Salmon library type was set to `-l A` to automatically detect the type of each sample.
-2. The next portion of the analysis is performed from ‘r_script.r’ and follows the workflow described by Balli: Generate the transcripts per million (TPM) matrix.
+2. The next portion of the analysis is performed from `r_script.r` and follows the workflow described by Balli: Generate the transcripts per million (TPM) matrix.
 3. Create a matrix to specify the group each sample belongs to.
 4. Filter out lowly expressed genes.
 5. Generate a principle component plot
